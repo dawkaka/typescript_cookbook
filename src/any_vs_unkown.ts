@@ -6,6 +6,10 @@
 
 const me: any = "Hello world"
 
-const myName: string = me
+const myName: string = me // this is fine
 
 
+
+const mee: unknown = me
+
+const name2: string = typeof mee == "string" ? mee : "" // need to check the type else won't works
