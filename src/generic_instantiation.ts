@@ -43,3 +43,39 @@ const onDemandFilter = reset({
     result: boolean;
 }; */
 
+
+type TreeItems = {
+    id: string;
+    children: TreeItems[];
+    collapsed?: boolean;
+}
+
+function createRootItem<T extends TreeItems>(): T {
+    return {
+        id: "hello",
+        children: []
+    }
+}
+
+let item = createRootItem();
+
+type BaseTreeItem = {
+    id: "root";
+    children: BaseTreeItem[]
+}
+
+type TreeItem<Children extends TreeItem = BaseTreeItem> = {
+    id: string;
+    children: Children[]
+}
+
+function attachToRoot<T extends TreeItem>(children: T[]): TreeItem<T> {
+    return {
+        id: "root",
+        children
+    }
+}
+
+let children = [{ id: "string", children: [], collpase: false }]
+
+let root = attachToRoot(children)
