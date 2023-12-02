@@ -4,7 +4,7 @@ function retrieve(content: ContentType) {
     // tbd
 }
 
-retrieve("pa") // not auto copmlete
+retrieve("pa") // no auto copmlete
 
 
 type ContentType2 = "post" | "page" | "asset" | string & {}
