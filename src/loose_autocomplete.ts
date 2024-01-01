@@ -13,4 +13,4 @@ function retrieve2(content: ContentType2) {
     // tbd
 }
 
-retrieve2("page") // You know get auto completion for the union literals
+retrieve2("page") // You know get auto completion for the union string literals
