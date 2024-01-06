@@ -69,7 +69,7 @@ type Group<Collection extends Record<string, any>, Selector extends keyof Collec
  */
 
 type Group2<Collection, Selector extends keyof Collection> = {
-
+    // @ts-expect-error
     [x in Collection[Selector]]?: Collection[]
 
 }

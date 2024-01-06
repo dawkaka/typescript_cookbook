@@ -29,7 +29,7 @@ myCollection[0]
 // we don't want a single eleemnt to be change directly using index access
 // we want to make sure that we can make changes to individual elements outside of myCollection
 
-myCollection[0].classList.add("we dont' want this") // we don't want this
+myCollection[0].classList.add("we-dont-want-this") // we don't want this
 
 // we can use a conditional type to get only sub-types of string from the union
 
@@ -55,4 +55,4 @@ myCollection2
 
 
 // @ts-expect-error
-myCollection2[0]
+myCollection2[0].classList.add("uncomment-to-see-error-message")
