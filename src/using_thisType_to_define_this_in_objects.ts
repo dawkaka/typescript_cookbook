@@ -7,7 +7,7 @@ type MapFnToProp<F extends FnObj> = {
 
 type Options<Data, Computed extends FnObj, Method> = {
     data(this: {}): Data,
-    computed: Computed & ThisType<Data>
+    computed: ThisType<Data>
     method: Method & ThisType<Data & MapFnToProp<Computed> & Method>
 }
 
