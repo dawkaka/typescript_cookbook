@@ -35,7 +35,7 @@ type NestedSerialize<T> = {
     [K in keyof T]: T[K] extends object ? Serialize<T[K]> : T[K]
 }
 
-type Serialize<T> = T extends { serialize(): infer R } ? R : NestedSerialize<Remove<T, Function>>
+type Serialize<T> = T extends { serialize(): any } ? ReturnType<T["serialize"]> : NestedSerialize<Remove<T, Function>>
 
 type NestedPerson = Serialize<PersonNested>
 

@@ -7,7 +7,7 @@ type MapFnToProp<F extends FnObj> = {
 
 type Options<Data, Computed extends FnObj, Method> = {
     data(this: {}): Data,
-    computed: ThisType<Data>
+    computed: Computed & ThisType<Data>
     method: Method & ThisType<Data & MapFnToProp<Computed> & Method>
 }
 
@@ -21,6 +21,9 @@ create({
     computed: {
         getName: function () {
             return `${this.firstName} ${this.lastName}`
+        },
+        getLastName: function () {
+            return this.lastName
         }
     },
     method: {
